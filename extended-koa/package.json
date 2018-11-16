@@ -1,0 +1,42 @@
+{
+  "name": "midway6-extended-koa",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "dependencies": {
+    "midway": "^0.6.0",
+    "tslib": "^1.8.1",
+    "typescript": "^2.8.0"
+  },
+  "devDependencies": {
+    "@types/node": "^10.5.5",
+    "egg-ci": "^1.8.0",
+    "midway-bin": "^0.2.4",
+    "midway-mock": "^0.2.4",
+    "ts-node": "^7.0.0",
+    "tslint": "^5.9.1"
+  },
+  "engines": {
+    "node": ">=8.9.0"
+  },
+  "scripts": {
+    "start": "pandora start .",
+    "stop": "egg-scripts stop --title=egg-server-midway6-test",
+    "dev": "NODE_ENV=local midway-bin dev --ts",
+    "debug": "NODE_ENV=local midway-bin debug --ts",
+    "test": "npm run lint -- --fix && midway-bin test --ts",
+    "cov": "midway-bin cov --ts",
+    "lint": "tslint -c tslint.json --project .",
+    "ci": "midway-bin cov --ts",
+    "build": "midway-bin build -c"
+  },
+  "ci": {
+    "version": "8, 9"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "",
+  "license": "MIT"
+}

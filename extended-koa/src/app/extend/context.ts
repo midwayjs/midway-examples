@@ -1,0 +1,5 @@
+export = {
+  getName() {
+    return 'harry';
+  }
+}
