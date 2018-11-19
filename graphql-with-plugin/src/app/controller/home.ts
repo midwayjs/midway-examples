@@ -5,8 +5,7 @@ import { controller, get, provide } from 'midway';
 export class HomeController {
 
   @get('/')
-  async index(ctx: any) {
-    ctx.body = ctx.getName() + ' ' + ctx.name;
+  async index(ctx) {
+    ctx.body = `Welcome to midwayjs!`;
   }
-
 }

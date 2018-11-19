@@ -3,3 +3,11 @@ package-lock.json
 logs/
 run/
 .idea/
+dist/
+.vscode
+.DS_Store
+.travis.yml
+appveyor.yml
+.prettierrc
+.gitignore
+LICENSE
