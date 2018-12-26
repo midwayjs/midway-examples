@@ -101,7 +101,6 @@ describe('test/controller/post.test.ts', () => {
       .send({id: postid})
       .expect(200)
       .then(response => {
-        console.log(response.body)
         assert(response.body === true)
       })
     )
