@@ -3,7 +3,7 @@ import { IPostService } from '../../interface';
 
 @provide()
 @controller('/post')
-export class HomeController {
+export class PostController {
   @inject()
   postService: IPostService;
 
