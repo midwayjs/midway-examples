@@ -1,31 +1,22 @@
 {
   "name": "extended-koa",
   "version": "1.0.0",
-  "description": "",
   "private": true,
   "dependencies": {
-    "midway": "^1.0.0",
-    "tslib": "^1.8.1",
-    "typescript": "^3.2.0"
+    "midway": "^1.0.0"
   },
   "devDependencies": {
-    "@types/node": "^10.5.5",
     "midway-bin": "1",
-    "midway-mock": "1",
-    "ts-node": "^7.0.0",
-    "tslint": "^5.9.1"
+    "midway-demo-lib": "1"
   },
   "engines": {
     "node": ">=8.9.0"
   },
   "scripts": {
-    "start": "pandora start .",
-    "stop": "egg-scripts stop --title=egg-server-midway6-test",
     "dev": "NODE_ENV=local midway-bin dev --ts",
     "debug": "NODE_ENV=local midway-bin debug --ts",
-    "test": "npm run lint -- --fix && midway-bin test --ts",
+    "test": "midway-bin test --ts",
     "cov": "midway-bin cov --ts",
-    "lint": "tslint -c tslint.json --project .",
     "ci": "midway-bin cov --ts",
     "build": "midway-bin build -c"
   }

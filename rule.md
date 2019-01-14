@@ -4,11 +4,17 @@
 - 补充 README 内容，描述清楚这个示例是做什么用的
 - 增加测试用例，方便回归
 
+> demo 的脚手架暂无，后面将会单独分离
 
-由于使用了 lerna 管理示例，开发方法为：
 
-- 运行 npm i 安装 lerna 依赖和 typescript 相关依赖
-- 运行 npm run bootstrap 安装示例依赖，所有仓库的依赖都会聚合
-- 进入示例目录执行 npm run dev/debug 进行开发
+demo 使用了精简版本的 midway，主要区别为：
 
-Tips: 根目录 package.json 的依赖无需在示例包中重复依赖，尽量减少依赖量，只保留不同的部分
+- 使用 `midway-demo-lib` 包精简依赖
+- 移除 tslint 等在 demo 中意义不大的部分
+- 精简了 pkg，移除了没必要的部分
+
+虽然使用了 lerna 管理示例，但是不影响单个示例的开发，方法为：
+
+- 进入示例目录，运行 npm i 安装依赖
+- 运行 npm run dev，或者 npm run debug 进行开发
+- 运行 npm run test 进行测试

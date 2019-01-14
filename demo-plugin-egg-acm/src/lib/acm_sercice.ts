@@ -25,6 +25,8 @@ export class ACMService {
       console.log('get data from acm', data);
       this.acmText = data;
     });
+    
+    this.acmText = await this.acm.getConfig(dataId, group);
   }
 
   getData() {

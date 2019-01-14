@@ -1,8 +1,9 @@
 {
-  "name": "unittest",
+  "name": "midway-plugin-egg-acm",
   "version": "1.0.0",
   "private": true,
   "dependencies": {
+    "egg-acm": "^3.0.0",
     "midway": "^1.0.0"
   },
   "devDependencies": {
