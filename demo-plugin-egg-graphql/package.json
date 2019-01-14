@@ -1,5 +1,5 @@
 {
-  "name": "graphql-with-plugin",
+  "name": "demo-plugin-egg-graphql",
   "version": "1.0.0",
   "private": true,
   "dependencies": {

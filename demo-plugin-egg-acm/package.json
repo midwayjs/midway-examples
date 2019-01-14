@@ -1,5 +1,5 @@
 {
-  "name": "midway-plugin-egg-acm",
+  "name": "demo-plugin-egg-acm",
   "version": "1.0.0",
   "private": true,
   "dependencies": {
