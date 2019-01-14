@@ -1,11 +1,10 @@
 {
-  "name": "midway-test-demo",
+  "name": "schedule",
   "version": "1.0.0",
   "description": "",
   "private": true,
   "dependencies": {
-    "egg-graphql": "^2.2.0",
-    "midway": "*"
+    "midway": "^1.0.0"
   },
   "devDependencies": {
     "@types/mocha": "^5.2.5",
@@ -16,7 +15,8 @@
     "tslib": "^1.8.1",
     "ts-node": "^7.0.1",
     "tslint": "^5.9.1",
-    "typescript": "^2.8.0"
+    "typescript": "^2.8.0",
+    "webstorm-disable-index": "^1.2.0"
   },
   "engines": {
     "node": ">=8.9.0"
