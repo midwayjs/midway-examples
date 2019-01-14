@@ -11,3 +11,5 @@ appveyor.yml
 .prettierrc
 .gitignore
 LICENSE
+.nyc_output
+coverage

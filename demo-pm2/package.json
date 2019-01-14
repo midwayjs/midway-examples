@@ -1,5 +1,5 @@
 {
-  "name": "demo-extended-koa",
+  "name": "demo-pm2",
   "version": "1.0.0",
   "private": true,
   "dependencies": {
@@ -19,5 +19,8 @@
     "cov": "midway-bin cov --ts",
     "ci": "midway-bin cov --ts",
     "build": "midway-bin build -c"
+  },
+  "midway-server-options": {
+    "typescript": true
   }
 }

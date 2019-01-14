@@ -2,23 +2,18 @@
   "name": "open-midway-examples",
   "version": "1.0.0",
   "devDependencies": {
-    "@types/chai": "^4.1.7",
-    "@types/lodash": "^4.14.119",
-    "@types/mocha": "^5.2.5",
-    "@types/node": "^10.12.18",
-    "debug": "^4.1.1",
     "git-hooks": "^1.1.10",
     "lerna": "^3.10.5",
-    "lerna-relinker": "^1.4.0",
-    "tslint": "^5.9.1",
-    "typescript": "^3.2.0"
+    "lerna-relinker": "^1.4.0"
   },
   "scripts": {
     "autod": "lerna run autod",
     "test": "lerna run test",
-    "cov": "sh scripts/cov.sh",
+    "cov": "lerna run cov",
     "ci": "npm run build && npm run cov",
-    "bootstrap": "rm -f ./packages/.DS*; lerna bootstrap --hoist --no-ci",
-    "clean": "lerna clean --yes; rm -rf ./packages/**/package-lock.json; rm -rf ./packages/**/run; rm -rf ./packages/**/logs;rm -rf ./packages/**/dist; "
+    "build": "lerna run build",
+    "bootstrap": "rm -f ./**/.DS*; lerna bootstrap --no-ci",
+    "purge": "npm run clean; rm -rf node_modules; ",
+    "clean": "lerna clean --yes; sh ./scripts/clean.sh"
   }
 }

@@ -1,5 +1,5 @@
 {
-  "name": "demo-extended-koa",
+  "name": "demo-plugin-schedule",
   "version": "1.0.0",
   "private": true,
   "dependencies": {

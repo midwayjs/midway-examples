@@ -1,8 +1,9 @@
 {
-  "name": "demo-extended-koa",
+  "name": "demo-plugin-egg-socket-io",
   "version": "1.0.0",
   "private": true,
   "dependencies": {
+    "egg-socket.io": "^4.1.5",
     "midway": "^1.0.0"
   },
   "devDependencies": {
@@ -13,7 +14,7 @@
     "node": ">=8.9.0"
   },
   "scripts": {
-    "dev": "NODE_ENV=local midway-bin dev --ts",
+    "dev": "NODE_ENV=local midway-bin dev --ts --sticky",
     "debug": "NODE_ENV=local midway-bin debug --ts",
     "test": "midway-bin test --ts",
     "cov": "midway-bin cov --ts",
