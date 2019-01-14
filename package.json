@@ -13,7 +13,7 @@
     "ci": "npm run build && npm run cov",
     "build": "lerna run build",
     "bootstrap": "rm -f ./**/.DS*; lerna bootstrap --no-ci",
-    "purge": "npm run clean; rm -rf package-lock.json; rm -rf node_modules; ",
-    "clean": "lerna clean --yes; rm -rf ./**/package-lock.json; rm -rf ./**/run; rm -rf ./**/logs; rm -rf ./**/dist;"
+    "purge": "npm run clean; rm -rf node_modules; ",
+    "clean": "lerna clean --yes; sh ./scripts/clean.sh"
   }
 }

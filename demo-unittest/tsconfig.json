@@ -19,8 +19,6 @@
     "app/public",
     "app/views",
     "dist",
-    "node_modules",
-    "!node_modules/@types",
-    "test"
+    "node_modules"
   ]
 }

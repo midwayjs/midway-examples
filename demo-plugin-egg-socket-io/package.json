@@ -16,7 +16,7 @@
   "scripts": {
     "dev": "NODE_ENV=local midway-bin dev --ts --sticky",
     "debug": "NODE_ENV=local midway-bin debug --ts",
-    "test": "npm run lint -- --fix && midway-bin test --ts",
+    "test": "midway-bin test --ts",
     "cov": "midway-bin cov --ts",
     "ci": "midway-bin cov --ts",
     "build": "midway-bin build -c"
