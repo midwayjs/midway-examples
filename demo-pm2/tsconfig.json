@@ -6,20 +6,20 @@
     "moduleResolution": "node",
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "inlineSourceMap":true,
-    "noImplicitThis": true,
+    "noImplicitThis": false,
     "noUnusedLocals": true,
     "stripInternal": true,
     "pretty": true,
     "declaration": true,
     "outDir": "dist",
-    "lib": ["es2017", "dom"]
+    "lib": ["es2017", "dom"],
+    "sourceMap": true
   },
   "exclude": [
-    "app/public",
-    "app/views",
-    "dist",
     "node_modules",
+    "dist",
+    "src/app/public",
+    "src/app/view",
     "test"
   ]
 }
