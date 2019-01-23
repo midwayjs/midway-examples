@@ -6,6 +6,10 @@ describe('test/controller/home.test.ts', () => {
     assert(app.config.keys.startsWith(pkg.name));
   });
 
+  it('should get untest test config', () => {
+    assert(app.config.test.a === 1);
+  });
+
   it('should GET /', () => {
     return app
       .httpRequest()
