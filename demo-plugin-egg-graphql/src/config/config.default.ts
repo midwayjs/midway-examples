@@ -6,6 +6,7 @@ module.exports = (appInfo: any) => {
 
   // add your config here
   config.middleware = [
+    'graphql'
   ];
 
   config.graphql = {
