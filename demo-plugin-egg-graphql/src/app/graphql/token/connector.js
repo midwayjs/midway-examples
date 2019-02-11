@@ -3,6 +3,7 @@
 class TokenConnector {
   constructor(ctx) {
     this.ctx = ctx;
+    this.requestContext = this.ctx.requestContext;
   }
 
   async createToken() {
@@ -27,9 +28,12 @@ class TokenConnector {
   }
 
   async getTokenById() {
+    // 注意，这里必须实时拿取 userService 实例，每个请求周期的实例都不同
+    const userService = await this.requestContext.getAsync('userService');
+    const data = await userService.getUserList();
     return {
       success: true,
-      message: 'ok',
+      message: 'get service data ' + JSON.stringify(data),
       data: { id: '1' },
     };
   }

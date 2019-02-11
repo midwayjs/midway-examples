@@ -9,6 +9,10 @@ module.exports = (appInfo: any) => {
     'graphql'
   ];
 
+  config.security = {
+    csrf: false,
+  }
+
   config.graphql = {
     router: '/graphql',
     // 是否加载到 app 上，默认开启
@@ -18,9 +22,9 @@ module.exports = (appInfo: any) => {
     // 是否加载开发者工具 graphiql, 默认开启。路由同 router 字段。使用浏览器打开该可见。
     graphiql: true,
     // graphQL 路由前的拦截器
-    onPreGraphQL: function* (ctx) {},
+    onPreGraphQL: async (ctx) => {},
     // 开发工具 graphiQL 路由前的拦截器，建议用于做权限操作(如只提供开发者使用)
-    onPreGraphiQL: function* (ctx) {},
+    onPreGraphiQL: async (ctx) => {},
   };
 
   return config;
