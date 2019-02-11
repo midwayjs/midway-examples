@@ -1,5 +1,5 @@
 'use strict';
-// 在 connector 里面可以调用 await this.ctx.service.xxx() 去获取数据
+
 class TokenConnector {
   constructor(ctx) {
     this.ctx = ctx;
@@ -28,6 +28,7 @@ class TokenConnector {
   }
 
   async getTokenById() {
+    // 获取 ioc 容器中的对象
     // 注意，这里必须实时拿取 userService 实例，每个请求周期的实例都不同
     const userService = await this.requestContext.getAsync('userService');
     const data = await userService.getUserList();
