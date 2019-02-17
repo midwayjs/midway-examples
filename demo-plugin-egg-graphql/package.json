@@ -20,5 +20,10 @@
     "cov": "midway-bin cov --ts",
     "ci": "midway-bin cov --ts",
     "build": "midway-bin build -c"
+  },
+  "midway-bin-build": {
+    "include": [
+      "app/graphql"
+    ]
   }
 }
