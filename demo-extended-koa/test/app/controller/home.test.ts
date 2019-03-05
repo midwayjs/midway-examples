@@ -9,4 +9,11 @@ describe('test/app/controller/home.test.ts', () => {
       .expect('harry welcome')
       .expect(200);
   });
+
+  it('should GET /api use router middleware', () => {
+    return app.httpRequest()
+      .get('/api')
+      .expect('222111')
+      .expect(200);
+  });
 });

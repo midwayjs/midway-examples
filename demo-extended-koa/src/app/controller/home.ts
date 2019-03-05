@@ -9,4 +9,9 @@ export class HomeController {
     ctx.body = ctx.getName() + ' ' + ctx.name;
   }
 
+  @get('/api', {middleware: ['apiMiddleware']})
+  async api(ctx: any) {
+    ctx.body = ctx.api;
+  }
+
 }
