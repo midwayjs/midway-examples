@@ -1,16 +1,16 @@
-import { controller, get, provide } from 'midway';
+import { controller, get, provide, Context } from 'midway';
 
 @provide()
 @controller('/')
 export class HomeController {
 
   @get('/')
-  async index(ctx: any) {
+  async index(ctx: Context) {
     ctx.body = ctx.getName() + ' ' + ctx.name;
   }
 
   @get('/api', {middleware: ['apiMiddleware']})
-  async api(ctx: any) {
+  async api(ctx: Context) {
     ctx.body = ctx.api;
   }
 
