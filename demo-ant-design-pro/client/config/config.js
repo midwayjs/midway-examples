@@ -38,7 +38,26 @@ const plugins = [
         ? {
             dll: {
               include: ['dva', 'dva/router', 'dva/saga', 'dva/fetch'],
-              exclude: ['@babel/runtime', 'netlify-lambda', 'egg-view-assets', 'egg-view-nunjucks'],
+              exclude: [
+                '@babel/runtime',
+                'netlify-lambda',
+                '@antv/data-set',
+                'bizcharts',
+                'bizcharts-plugin-slider',
+                'enquire-js',
+                'gg-editor',
+                'lodash-decorators',
+                'memoize-one',
+                'numeral',
+                'nzh',
+                'react-container-query',
+                'react-copy-to-clipboard',
+                'react-document-title',
+                'react-fittext ',
+                'react-media',
+                'umi-request',
+                'react-fittext',
+              ],
             },
             hardSource: false,
           }
