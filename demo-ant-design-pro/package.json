@@ -2,13 +2,6 @@
   "name": "demo-ant-design-pro",
   "version": "1.0.0",
   "description": "A front-end and back-end separation project includes midway(ts) and ant-design-pro.",
-  "keywords": [
-    "node",
-    "react",
-    "midway",
-    "typeScript",
-    "ant-design-pro"
-  ],
   "scripts": {
     "start": "cd server && npm run start",
     "build": "npm run clientbuild && npm run serverbuild",
@@ -22,15 +15,11 @@
     "clientLint": "cd client && npm run lint",
     "serverLint": "cd server && npm run lint"
   },
-  "engines": {
-    "node": ">=9.11.2"
-  },
-  "config": {
-    "build": {
-      "deps": "isolation"
-    },
-    "docker": {
-      "os": 7
-    }
-  }
+  "keywords": [
+    "node",
+    "react",
+    "midway",
+    "typeScript",
+    "ant-design-pro"
+  ]
 }
