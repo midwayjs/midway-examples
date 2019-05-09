@@ -1,10 +1,10 @@
 {
-  "name": "demo-extended-koa",
+  "name": "demo-nacos",
   "version": "1.0.0",
   "private": true,
   "dependencies": {
     "midway": "^1.0.0",
-    "nacos": "^1.1.2"
+    "nacos": "^2.0.0"
   },
   "devDependencies": {
     "midway-bin": "1",
