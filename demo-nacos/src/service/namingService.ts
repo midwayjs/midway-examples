@@ -18,7 +18,8 @@ export class NamingService {
   async init() {
     this.nacosClient = new NacosNamingClient({
       ...this.nacosConfig,
-      logger: this.logger, // 这里必须传入 logger，不然会报错
+      logger: this.logger,
+      namespace: 'public',
     });
     await this.nacosClient.ready();
 
