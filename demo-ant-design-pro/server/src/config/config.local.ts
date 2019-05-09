@@ -7,7 +7,7 @@ module.exports = (appInfo: any) => {
     publicPath: 'public',
     devServer: {
       autoPort: true,
-      command: 'umi dev --port={port}',
+      command: 'cross-env umi dev --port={port}',
       debug: true,
       portPath: path.join(appInfo.baseDir, '../run/assetsPort'),
       env: {
