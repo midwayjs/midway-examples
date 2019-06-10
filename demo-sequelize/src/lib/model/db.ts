@@ -5,14 +5,24 @@ import { scope, ScopeEnum, config, provide, async, init } from 'midway';
 
 let sequelize: Sequelize.Sequelize;
 
+export interface IDBOptions extends Sequelize.Options {
+  database: string;
+  username: string;
+  password: string;
+}
+
+export interface IDB {
+  sequelize: Sequelize.Sequelize;
+  options: IDBOptions;
+}
 @scope(ScopeEnum.Singleton)
 @async()
 @provide('mysqlDB')
-export default class DB {
+export default class DB implements IDB{
   sequelize;
 
   @config('sequelize')
-  options;
+  options: IDBOptions;
 
   @init()
   connect() {
