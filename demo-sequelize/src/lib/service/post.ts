@@ -1,5 +1,6 @@
 import { provide, inject } from 'midway';
 import { IPostService, IListQueryOptions } from '../../interface';
+import { IPostModel } from '../model/post';
 
 interface IListQueryOpt {
   offset: number;
@@ -14,7 +15,7 @@ interface IListQueryOpt {
 @provide('postService')
 export class PostService implements IPostService {
   @inject('postModel')
-  model;
+  model: IPostModel;
 
   async list({ offset = 0, limit = 10, user_id }: IListQueryOptions) {
     const options: IListQueryOpt = {
