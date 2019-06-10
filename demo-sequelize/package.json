@@ -8,6 +8,7 @@
     "sequelize": "^4.41.0"
   },
   "devDependencies": {
+    "@types/sequelize": "^4.28.2",
     "midway-bin": "1",
     "midway-demo-lib": "1"
   },
