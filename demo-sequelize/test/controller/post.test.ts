@@ -1,6 +1,6 @@
 import { app, assert } from 'midway-mock/bootstrap';
 
-xdescribe('test/controller/post.test.ts', () => {
+describe('test/controller/post.test.ts', () => {
   it('should assert config.keys', () => {
     const pkg = require('../../package.json');
     assert(app.config.keys.startsWith(pkg.name));
@@ -10,7 +10,7 @@ xdescribe('test/controller/post.test.ts', () => {
     return (
       app
         .httpRequest()
-        .get('/')
+        .get('/post/')
         // .expect('Welcome to midwayjs!')
         .expect(200)
     );

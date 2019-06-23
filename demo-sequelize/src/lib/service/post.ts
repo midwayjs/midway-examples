@@ -1,55 +1,55 @@
-import { provide, inject } from 'midway';
-import { IPostService, IListQueryOptions } from '../../interface';
-import { IPostModel } from '../model/post';
-
+import { inject, provide } from 'midway';
+import { Order, Model } from 'sequelize';
+import { IListQueryOptions, IPostService } from '../../interface';
+import { IPostModel, IPostAttributes } from '../model/post';
 interface IListQueryOpt {
   offset: number;
   limit: number;
   attributes: string[];
-  order: string[][];
+  order: Order;
   where?: {
-    user_id: number,
+    title: string;
   };
 }
 
 @provide('postService')
 export class PostService implements IPostService {
-  @inject('postModel')
-  model: IPostModel;
+  @inject('PostModel')
+  public model: IPostModel &  (new () => Model<any, IPostAttributes>);
 
-  async list({ offset = 0, limit = 10, user_id }: IListQueryOptions) {
+  public async list({ offset = 0, limit = 10, title }: IListQueryOptions) {
     const options: IListQueryOpt = {
       offset,
       limit,
-      attributes: ['id', 'title', 'user_id', 'created_at', 'updated_at'],
-      order: [['created_at', 'desc'], ['id', 'desc']],
+      attributes: ['id', 'title', 'content', 'created_at', 'updated_at'],
+      order: [['updated_at', 'desc'], ['id', 'desc']],
     };
-    if (user_id) {
+    if (title) {
       options.where = {
-        user_id,
+        title,
       };
     }
     return this.model.findAndCountAll(options);
   }
 
-  async find(id: number) {
-    const post = await this.model.findById(id);
+  public async find(id: number) {
+    const post = await this.model.findByPk(id);
     if (!post) {
       throw new Error('post not found');
     }
     return post;
   }
 
-  async create(post) {
+  public async create(post) {
     return this.model.create(post);
   }
 
-  async update(id, updates) {
+  public async update(id, updates) {
     const post = await this.find(id);
     return post.update(updates);
   }
 
-  async destroy(id) {
+  public async destroy(id) {
     const post = await this.find(id);
     return post.destroy();
   }

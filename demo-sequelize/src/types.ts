@@ -1,7 +1,7 @@
-import { DataTypeAbstract, DefineAttributeColumnOptions } from 'sequelize';
+import { DataType, ModelAttributeColumnOptions } from 'sequelize';
 
-type SequelizeAttribute = string | DataTypeAbstract | DefineAttributeColumnOptions;
+type SequelizeAttribute = string | DataType | ModelAttributeColumnOptions;
 
 export type SequelizeAttributes<T extends { [key: string]: any }> = {
-  [P in keyof T] : SequelizeAttribute
+  [P in keyof T]: SequelizeAttribute
 };

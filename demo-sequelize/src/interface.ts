@@ -1,10 +1,8 @@
-import { IPostInstance } from "./lib/model/post";
-
 /**
  * @description User-Service parameters
  */
 export interface IListQueryOptions {
-  user_id?: number;
+  title?: string;
   limit: number;
   offset: number;
 }
@@ -13,9 +11,9 @@ export interface IListQueryOptions {
  * @description User-Service abstractions
  */
 export interface IPostService {
-  list(options: IListQueryOptions): Promise<{count: number, rows: IPostInstance[]}>;
-  find(id: number): Promise<IPostInstance>;
-  create(post: any): Promise<IPostInstance>;
-  update(id: number, updates: any): Promise<IPostInstance>;
+  list(options: IListQueryOptions): Promise<{ count: number; rows: any[] }>;
+  find(id: number): Promise<any>;
+  create(post: any): Promise<any>;
+  update(id: number, updates: any): Promise<any>;
   destroy(id: number): Promise<void>;
 }
