@@ -3,14 +3,15 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "midway": "^1.0.0",
-    "mysql2": "^1.6.1",
-    "sequelize": "^4.41.0"
+    "midway": "^1.6.3",
+    "mysql2": "^1.6.5",
+    "sequelize": "^5.8.12"
   },
   "devDependencies": {
-    "@types/sequelize": "^4.28.2",
-    "midway-bin": "1",
-    "midway-demo-lib": "1"
+    "@types/jest": "^24.0.15",
+    "jest": "^24.8.0",
+    "midway-bin": "1.5.6",
+    "midway-demo-lib": "1.0.2"
   },
   "engines": {
     "node": ">=8.9.0"

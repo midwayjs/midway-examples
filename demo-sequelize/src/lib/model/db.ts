@@ -1,32 +1,28 @@
-'use strict';
+import { async, config, init, provide, scope, ScopeEnum } from 'midway';
+import { Options, Sequelize } from 'sequelize';
 
-import * as Sequelize from 'sequelize';
-import { scope, ScopeEnum, config, provide, async, init } from 'midway';
-
-let sequelize: Sequelize.Sequelize;
-
-export interface IDBOptions extends Sequelize.Options {
+export interface IDBOptions extends Options {
   database: string;
   username: string;
   password: string;
 }
 
 export interface IDB {
-  sequelize: Sequelize.Sequelize;
+  sequelize: Sequelize;
   options: IDBOptions;
 }
 @scope(ScopeEnum.Singleton)
 @async()
-@provide('mysqlDB')
-export default class DB implements IDB{
-  sequelize;
+@provide('DB')
+export default class DB implements IDB {
+  public sequelize: Sequelize;
 
   @config('sequelize')
-  options: IDBOptions;
+  public options: IDBOptions;
 
   @init()
-  connect() {
-    sequelize = new Sequelize(
+  public connect() {
+    this.sequelize = new Sequelize(
       this.options.database,
       this.options.username,
       this.options.password,
@@ -38,6 +34,5 @@ export default class DB implements IDB{
         logging: false,
       },
     );
-    this.sequelize = sequelize;
   }
 }

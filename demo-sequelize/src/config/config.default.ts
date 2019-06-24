@@ -19,6 +19,6 @@ module.exports = (appInfo: any) => {
     // exclude: 'index.js', // ignore `app/${baseDir}/index.js` when load models, support glob and array
     // more sequelize options
   };
-
+  
   return config;
 };

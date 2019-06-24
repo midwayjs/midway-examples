@@ -1,17 +1,23 @@
-import { controller, get, post, patch, del, provide, inject } from 'midway';
+/**
+ * midway sequelize 使用范例
+ * 参考
+ * - https://github.com/midwayjs/midway-examples/tree/master/demo-sequelize
+ * - http://docs.sequelizejs.com/manual/typescript.html
+ */
+import { controller, del, get, inject, patch, post, provide } from 'midway';
 import { IPostService } from '../../interface';
 
 @provide()
 @controller('/post/')
-export class HomeController {
+export class PostController {
   @inject('postService')
-  service: IPostService;
+  public service: IPostService;
 
   /**
    * GET /post
    */
   @get('/')
-  async index(ctx) {
+  public async index(ctx) {
     const query = {
       limit: parseInt(ctx.query.limit, 10) || 10,
       offset: parseInt(ctx.query.offset, 10) || 0,
@@ -23,7 +29,7 @@ export class HomeController {
    * GET /post/:id
    */
   @get('/:id')
-  async show(ctx) {
+  public async show(ctx) {
     ctx.body = await this.service.find(parseInt(ctx.params.id, 10));
   }
 
@@ -31,8 +37,9 @@ export class HomeController {
    * POST /post/
    */
   @post('/')
-  async create(ctx) {
+  public async create(ctx) {
     const res = await this.service.create(ctx.request.body);
+    // tslint:disable-next-line: no-magic-numbers
     ctx.status = 201;
     ctx.body = res;
   }
@@ -41,7 +48,7 @@ export class HomeController {
    * PATCH /post/:id
    */
   @patch('/:id')
-  async update(ctx) {
+  public async update(ctx) {
     const id = ctx.params.id;
     const updates = {
       title: ctx.request.body.title,
@@ -54,9 +61,10 @@ export class HomeController {
    * DEL /post/:id
    */
   @del('/id')
-  async destroy(ctx) {
+  public async destroy(ctx) {
     const id = parseInt(ctx.params.id, 10);
     await this.service.destroy(id);
+    // tslint:disable-next-line: no-magic-numbers
     ctx.status = 200;
   }
 }
