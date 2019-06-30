@@ -1,6 +1,5 @@
 import { app, assert } from 'midway-mock/bootstrap';
-import { IPostService } from '../../src/interface';
-
+import { IPostService } from '../../src/lib/service/post.i';
 describe('test/service/post.test.ts', () => {
   it('#list', async () => {
     // prettier-ignore

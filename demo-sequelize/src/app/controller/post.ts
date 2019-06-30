@@ -5,7 +5,7 @@
  * - http://docs.sequelizejs.com/manual/typescript.html
  */
 import { controller, del, get, inject, patch, post, provide } from 'midway';
-import { IPostService } from '../../interface';
+import { IPostService } from '../../lib/service/post.i';
 
 @provide()
 @controller('/post/')
