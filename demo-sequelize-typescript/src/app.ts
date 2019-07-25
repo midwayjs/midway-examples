@@ -1,7 +1,7 @@
 import { DB } from './lib/model/db';
 
 // build db connections when starting APP
-module.exports = (app) => {
+export = (app) => {
   app.beforeStart(async () => {
     console.log('🚀 Your awesome APP is launching...');
 
