@@ -1,21 +1,11 @@
 import { inject, provide } from 'midway';
-import { Order, Model } from 'sequelize';
-import { IListQueryOptions, IPostService } from '../../interface';
-import { IPostModel, IPostAttributes } from '../model/post';
-interface IListQueryOpt {
-  offset: number;
-  limit: number;
-  attributes: string[];
-  order: Order;
-  where?: {
-    title: string;
-  };
-}
+import { IPostModel } from '../model/post';
+import { IListQueryOpt, IListQueryOptions, IPostService } from './post.i';
 
 @provide('postService')
 export class PostService implements IPostService {
   @inject('PostModel')
-  public model: IPostModel &  (new () => Model<any, IPostAttributes>);
+  public model: IPostModel;
 
   public async list({ offset = 0, limit = 10, title }: IListQueryOptions) {
     const options: IListQueryOpt = {
@@ -32,7 +22,7 @@ export class PostService implements IPostService {
     return this.model.findAndCountAll(options);
   }
 
-  public async find(id: number) {
+  public async find(id) {
     const post = await this.model.findByPk(id);
     if (!post) {
       throw new Error('post not found');

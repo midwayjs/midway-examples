@@ -1,7 +1,13 @@
-import { providerWrapper } from 'midway';
-import { BIGINT, DATE, INTEGER, STRING, TEXT, Model } from 'sequelize';
+import { IApplicationContext, providerWrapper } from 'midway';
+import { BIGINT, DATE, INTEGER, Model, STRING, TEXT } from 'sequelize';
 import { IDB } from './db';
-import { SequelizeAttributes } from '../../types';
+
+providerWrapper([
+  {
+    id: 'PostModel',
+    provider: setupModel,
+  },
+]);
 
 export interface IPostAttributes {
   id: number;
@@ -12,18 +18,15 @@ export interface IPostAttributes {
   updated_at: Date;
 }
 
-export type IPostModel = typeof Model;
+export type IPostResult<T> = Model<any, T> & T;
+export type IModel<K extends IPostResult<T>, T> = typeof Model & (new () => K);
 
-providerWrapper([
-  {
-    id: 'PostModel',
-    provider: setupModel,
-  },
-]);
+export type IPostModelResult = IPostResult<IPostAttributes>;
+export type IPostModel = IModel<IPostModelResult, IPostAttributes>;
 
-export default async function setupModel(context) {
+export default async function setupModel(context: IApplicationContext) {
   const db: IDB = await context.getAsync('DB');
-  const attributes: SequelizeAttributes<IPostAttributes>  = {
+  const attributes = {
     id: {
       type: BIGINT,
       primaryKey: true,
