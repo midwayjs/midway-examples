@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "egg-view-nunjucks": "^2.2.0",
-    "midway": "1",
+    "midway": "1"
   },
   "devDependencies": {
     "midway-bin": "1",

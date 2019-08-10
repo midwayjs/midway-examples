@@ -4,6 +4,7 @@
   ],
   "command": {
     "bootstrap": {
+      "ignore": ["demo-ant-design-pro", "demo-monorepo"],
       "npmClientArgs": [
         "--no-package-lock"
       ]
