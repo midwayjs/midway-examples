@@ -4,13 +4,9 @@
   ],
   "command": {
     "bootstrap": {
-      "ignore": ["demo-ant-design-pro"],
       "npmClientArgs": [
         "--no-package-lock"
       ]
-    },
-    "run": {
-      "ignore": ["demo-sequelize", "demo-sequelize-typescript", "demo-nacos"]
     }
   },
   "version": "1.0.0"

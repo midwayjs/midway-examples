@@ -1,12 +1,10 @@
 {
-  "name": "demo-sequelize-typescript",
+  "name": "demo-monorepo-api",
   "version": "1.0.0",
   "private": true,
   "dependencies": {
     "midway": "1",
-    "mysql2": "^1.6.5",
-    "sequelize": "^5.8.12",
-    "sequelize-typescript": "^0.6.6"
+    "demo-monorepo-util": "^1.0.0"
   },
   "devDependencies": {
     "midway-bin": "1",

@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "midway": "^1.0.0",
+    "midway": "1",
     "nacos": "^2.0.0"
   },
   "devDependencies": {

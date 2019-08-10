@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "devDependencies": {
     "git-hooks": "^1.1.10",
-    "lerna": "^3.10.5",
+    "lerna": "^3.16.4",
     "lerna-relinker": "^1.4.0"
   },
   "scripts": {
@@ -12,7 +12,7 @@
     "cov": "lerna run cov",
     "ci": "npm run build && npm run cov",
     "build": "lerna run build",
-    "bootstrap": "rm -f ./**/.DS*; lerna bootstrap --no-ci",
+    "bootstrap": "rm -f ./packages/.DS*; lerna bootstrap --hoist --no-ci",
     "purge": "npm run clean; rm -rf node_modules; ",
     "clean": "lerna clean --yes; sh ./scripts/clean.sh"
   }

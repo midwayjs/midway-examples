@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "egg-graphql": "^2.2.0",
-    "midway": "^1.0.0"
+    "midway": "1"
   },
   "devDependencies": {
     "midway-bin": "1",
