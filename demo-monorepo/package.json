@@ -7,7 +7,7 @@
   "scripts": {
     "autod": "lerna run autod",
     "test": "npm run bootstrap && lerna run test",
-    "cov": "lerna run cov",
+    "cov": "npm run bootstrap && lerna run cov",
     "ci": "npm run build && npm run cov",
     "build": "lerna run build",
     "bootstrap": "lerna bootstrap --hoist --no-ci",
