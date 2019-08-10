@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "midway": "^1.6.3",
+    "midway": "1",
     "mysql2": "^1.6.5",
     "sequelize": "^5.8.12"
   },
