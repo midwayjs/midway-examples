@@ -2,11 +2,11 @@
   "name": "demo-monorepo",
   "version": "1.0.0",
   "devDependencies": {
-    "lerna": "^3.16.4",
+    "lerna": "^3.16.4"
   },
   "scripts": {
     "autod": "lerna run autod",
-    "test": "lerna run test",
+    "test": "npm run bootstrap && lerna run test",
     "cov": "lerna run cov",
     "ci": "npm run build && npm run cov",
     "build": "lerna run build",
