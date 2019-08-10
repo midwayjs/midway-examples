@@ -13,3 +13,4 @@ appveyor.yml
 LICENSE
 .nyc_output
 coverage
+*.log
