@@ -1,11 +1,11 @@
-import {mm} from 'midway-mock';
-import * as path from 'path';
-import * as assert from 'assert';
+const {mm} = require('midway-mock');
+const path = require('path');
+const assert = require('assert');
 
 const ioc = require('socket.io-client');
 let basePort = 17001;
 
-function client(nsp = '', opts:{port?;query?;} = {}) {
+function client(nsp = '', opts = {}) {
   let url = 'http://127.0.0.1:' + opts.port + (nsp || '');
   if (opts.query) {
     url += '?' + opts.query;
@@ -16,7 +16,7 @@ function client(nsp = '', opts:{port?;query?;} = {}) {
 describe('test/socketio.test.ts', () => {
 
   it('should async/await works ok', done => {
-    const app = mm.cluster(<any>{
+    const app = mm.cluster({
       baseDir: path.join(__dirname, '../'),
       workers: 1,
       typescript: true,

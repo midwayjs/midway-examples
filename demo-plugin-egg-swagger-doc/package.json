@@ -1,9 +1,9 @@
 {
-  "name": "demo-plugin-egg-jwt",
+  "name": "demo-plugin-egg-swagger-doc",
   "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "midway": "^1.0.0",
+    "midway": "1",
     "egg-swagger-doc": "^2.3.2"
   },
   "devDependencies": {
