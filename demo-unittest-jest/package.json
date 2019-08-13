@@ -1,0 +1,26 @@
+{
+  "name": "demo-unittest-jest",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "midway": "1"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.17",
+    "jest": "^24.8.0",
+    "midway-bin": "1",
+    "midway-demo-lib": "1",
+    "ts-jest": "24.0.2"
+  },
+  "engines": {
+    "node": ">=8.9.0"
+  },
+  "scripts": {
+    "dev": "NODE_ENV=local midway-bin dev --ts",
+    "debug": "NODE_ENV=local midway-bin debug --ts",
+    "test": "jest",
+    "cov": "jest --coverage",
+    "ci": "jest --coverage",
+    "build": "midway-bin build -c"
+  }
+}
