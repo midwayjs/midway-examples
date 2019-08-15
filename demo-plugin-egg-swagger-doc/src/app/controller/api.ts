@@ -1,5 +1,7 @@
 import { controller, post, provide, Context, inject } from 'midway';
-
+/**
+ * @controller api 登录接口
+ */
 @provide()
 @controller('/api')
 export default class APIController {
@@ -13,7 +15,7 @@ export default class APIController {
   /**
      * @summary 注册用户
      * @description 注册用户，记录用户账户/密码/
-     * @router post /api/login/doRegist
+     * @router post /api/doRegist
      * @request body registUserRequest *body    
      */
   @post('/doRegist')
@@ -24,7 +26,7 @@ export default class APIController {
   /**
   * @summary 用户登录
   * @description 用户登录
-  * @router post /api/login/doLogin
+  * @router post /api/doLogin
   * @request body registUserRequest *body    
   */
   @post('/doLogin')

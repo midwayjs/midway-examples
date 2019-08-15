@@ -13,7 +13,7 @@ export = (appInfo: any) => {
     },
     schemes: ['http'],
     enable: true,
-    routerMap: true,
+    routerMap: false,
   };
 
   return config;
