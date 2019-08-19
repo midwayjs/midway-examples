@@ -15,7 +15,7 @@ export class HomeController {
 
   @get('/token')
   async api(ctx: Context) {
-    const token = this.jwt.sign({ foo: 'bar' }, this.jwt.secret);
+    const token = this.jwt.sign({ foo: 'bar' }, this.jwtConfig.secret);
     ctx.body = token;
   }
 
