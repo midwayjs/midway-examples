@@ -23,6 +23,15 @@ describe(filename, () => {
     // await ctx.service.xx();
   })
 
+  it('should GET /', async () => {
+    const ret = await app.httpRequest()
+      .get('/')
+      .expect(200)
+
+    const msg: string = ret.res.text
+    assert(msg && msg.includes('Hello midwayjs!'))
+  })
+
   it('should GET /hello', async () => {
     const ret = await app.httpRequest()
       .get('/hello')
