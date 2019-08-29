@@ -15,10 +15,7 @@
     "cross-env": "^5.2.0",
     "egg-ci": "^1.12.0",
     "midway-bin": "1",
-    "midway-mock": "1.9.0",
-    "mocha": "^6.2.0",
-    "ts-node": "^8.3.0",
-    "typescript": "^3.5.0"
+    "midway-demo-lib": "1"
   },
   "engines": {
     "node": ">=10.16.0"
