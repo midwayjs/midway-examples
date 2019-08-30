@@ -38,7 +38,7 @@ describe('test/socketio.test.ts', () => {
         }
 
         if(idx === 2) {
-          assert(msg === 'Hi! I\'ve got your message: chat-data')
+          assert(msg === 'Hi! I\'ve got your message: chat-data123')
           socket.close();
         }
         idx++;
