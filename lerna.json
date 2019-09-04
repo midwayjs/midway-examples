@@ -4,7 +4,10 @@
   ],
   "command": {
     "bootstrap": {
+      "hoist": true,
       "ignore": ["demo-ant-design-pro"],
+      "noCi": true,
+      "nohoist": ["cross-env", "jest"],
       "npmClientArgs": [
         "--no-package-lock"
       ]
