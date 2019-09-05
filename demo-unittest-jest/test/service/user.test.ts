@@ -1,5 +1,5 @@
-import { mm } from 'midway-mock';
 import * as assert from 'assert';
+import { mm } from 'midway-mock';
 
 describe('test/service/user.test.ts', () => {
 
@@ -9,7 +9,7 @@ describe('test/service/user.test.ts', () => {
     app = mm.app({
       typescript: true,
     });
-    return app.ready();
+    return app.ready()
   });
 
   it('#getUser', async () => {
