@@ -1,5 +1,5 @@
-import { mm } from 'midway-mock';
 import * as assert from 'assert';
+import { mm } from 'midway-mock';
 
 describe('test/controller/home.test.ts', () => {
 
