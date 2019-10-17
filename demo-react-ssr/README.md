@@ -15,12 +15,12 @@ this is a demo for how to use midway with react ssr.
 │   ├── app.ts // midway启动入口文件
 │   ├── middleware
 │   ├── config // midway配置文件目录
-│   │   ├── config.default.js
-│   │   ├── config.local.js
-│   │   ├── config.prod.js
-│   │   ├── config.staging.js
-│   │   ├── plugin.js
-│   │   └── plugin.local.js
+│   │   ├── config.default.ts
+│   │   ├── config.local.ts
+│   │   ├── config.prod.ts
+│   │   ├── config.staging.ts
+│   │   ├── plugin.ts
+│   │   └── plugin.local.ts
 │   └── router.ts // 原egg路由文件，用于在控制器上自动绑定前端路由，无特殊需求不需要修改内容
 ├── build // webpack配置目录
 │   ├── env.js
@@ -39,9 +39,9 @@ this is a demo for how to use midway with react ssr.
 └── web // 前端文件目录
     ├── assets
     │   └── common.less
-    ├── entry.js // webpack打包入口文件，分环境导出不同配置
+    ├── entry.tsx // webpack打包入口文件，分环境导出不同配置
     ├── layout
-    │   ├── index.js // 页面布局
+    │   ├── index.tsx // 页面布局
     │   └── index.less
     └── page
         ├── index
