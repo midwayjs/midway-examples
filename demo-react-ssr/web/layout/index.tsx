@@ -1,10 +1,9 @@
-
-import React from 'react'
-import serialize from 'serialize-javascript'
-import { Link } from 'react-router-dom'
-import '@/assets/common.less'
-import './index.less'
-import { Context } from 'midway'
+import React from 'react';
+import serialize from 'serialize-javascript';
+import { Link } from 'react-router-dom';
+import { Context } from 'midway';
+import '@/assets/common.less';
+import './index.less';
 
 const commonNode = (props: LayoutProps) => (
   // 为了同时兼容ssr/csr请保留此判断，如果你的layout没有内容请使用 props.children ? <div>{ props.children }</div> : ''
@@ -13,19 +12,19 @@ const commonNode = (props: LayoutProps) => (
       <Link to='/'>Egg + React + SSR</Link>
       <div className='author'>by ykfe</div>
     </h1>{props.children ? props.children : ''}</div>
-)
+);
 
 interface LayoutProps {
-  layoutData?: Context,
-  children?: React.ReactChildren | React.ReactElement
+  layoutData?: Context;
+  children?: React.ReactChildren | React.ReactElement;
 }
 
 const Layout: SFC<LayoutProps> = (props: LayoutProps): JSX.Element => {
   if (__isBrowser__) {
-    return commonNode(props)
+    return commonNode(props);
   } else {
-    const { serverData } = props.layoutData
-    const { injectCss, injectScript } = props.layoutData.app.config
+    const { serverData } = props.layoutData;
+    const { injectCss, injectScript } = props.layoutData.app.config;
     return (
       <html lang='en'>
         <head>
@@ -49,8 +48,8 @@ const Layout: SFC<LayoutProps> = (props: LayoutProps): JSX.Element => {
           }} />
         </body>
       </html>
-    )
+    );
   }
-}
+};
 
-export default Layout
+export default Layout;
