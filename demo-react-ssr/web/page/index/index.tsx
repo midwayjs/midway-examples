@@ -1,13 +1,13 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import './index.less'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import './index.less';
 
 interface Props {
-  news: NewsItem[]
+  news: NewsItem[];
 }
 interface NewsItem {
-  id: string,
-  title: string
+  id: string;
+  title: string;
 }
 
 const Page: SFC<Props> = (props: Props): JSX.Element => {
@@ -25,8 +25,8 @@ const Page: SFC<Props> = (props: Props): JSX.Element => {
         }
       </ul>
     </div>
-  )
-}
+  );
+};
 
 Page.getInitialProps = (): Promise<Props> => {
   return Promise.resolve({
@@ -52,6 +52,6 @@ Page.getInitialProps = (): Promise<Props> => {
         title: 'How much do YouTube celebrities charge to advertise your product? '
       }
     ]
-  })
-}
-export default Page
+  });
+};
+export default Page;
