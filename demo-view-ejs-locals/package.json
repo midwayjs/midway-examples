@@ -1,0 +1,25 @@
+{
+  "name": "demo-demo-view-ejs-locals",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "midway": "^1.0.0",
+    "egg-view-ejs": "^2.0.1"
+  },
+  "devDependencies": {
+    "cross-env": "^6.0.0",
+    "midway-bin": "1",
+    "midway-demo-lib": "1"
+  },
+  "engines": {
+    "node": ">=10.16.0"
+  },
+  "scripts": {
+    "dev": "cross-env NODE_ENV=local midway-bin dev --ts",
+    "debug": "cross-env NODE_ENV=local midway-bin debug --ts",
+    "test": "midway-bin test --ts",
+    "cov": "midway-bin cov --ts",
+    "ci": "midway-bin cov --ts",
+    "build": "midway-bin build -c"
+  }
+}
