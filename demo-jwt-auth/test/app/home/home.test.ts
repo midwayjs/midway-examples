@@ -28,7 +28,9 @@ describe(filename, () => {
       .get('/')
       .expect(200)
 
-    const msg: string = ret.res.text
+    console.log('ret', ret);
+
+    const msg: string = ret.text
     assert(msg && msg.includes('Hello midwayjs!'))
   })
 
@@ -37,7 +39,7 @@ describe(filename, () => {
       .get('/hello')
       .expect(200)
 
-    const msg: string = ret.res.text
+    const msg: string = ret.text
     assert(msg && msg.includes('Hello midwayjs!'))
   })
 
@@ -46,7 +48,7 @@ describe(filename, () => {
       .get('/test_sign')
       .expect(200)
 
-    const msg: string = ret.res.text
+    const msg: string = ret.text
     assert(msg && msg.includes('{"foo":"bar",'))
     assert(msg.includes(header1))
   })
@@ -57,7 +59,7 @@ describe(filename, () => {
       .get('/token')
       .expect(401)
 
-    const msg: string = ret.res.text
+    const msg: string = ret.text
     assert(msg && msg.includes(JwtMsg.AuthFailed))
   })
 
@@ -67,7 +69,7 @@ describe(filename, () => {
       .set('authorization', `${schemePrefix} ${token1}    `)
       .expect(401)
 
-    const msg: string = ret.res.text
+    const msg: string = ret.text
     assert(msg && msg.includes(JwtMsg.AuthFailed))
   })
 
@@ -77,7 +79,7 @@ describe(filename, () => {
       .set('authorization', `${schemePrefix} ${token1}`)
       .expect(200)
 
-    const msg: string = ret.res.text
+    const msg: string = ret.text
     assert(msg && msg.includes(expectPayloadStr))
   })
 
@@ -89,7 +91,7 @@ describe(filename, () => {
       .get('/token')
       .expect(200)
 
-    const msg: string = ret.res.text
+    const msg: string = ret.text
     assert(msg && msg.includes(expectPayloadStr))
   })
 
@@ -101,7 +103,7 @@ describe(filename, () => {
       .get(url)
       .expect(302)
 
-    const msg: string = ret.res.text
+    const msg: string = ret.text
     assert(msg && msg.includes('Redirecting'))
     assert(msg.includes(`${url}_path`))
   })

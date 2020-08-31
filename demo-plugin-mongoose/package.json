@@ -1,5 +1,5 @@
 {
-  "name": "demo-plugin-egg-mongoose",
+  "name": "demo-plugin-mongoose",
   "version": "1.0.0",
   "private": true,
   "dependencies": {
