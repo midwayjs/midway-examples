@@ -26,9 +26,10 @@ describe(filename, () => {
   it('should GET /', async () => {
     const ret = await app.httpRequest()
       .get('/')
+      .set('authorization', `${schemePrefix} ${token1}    `)
       .expect(200)
 
-    console.log('ret', ret);
+    // console.log('ret', ret);
 
     const msg: string = ret.text
     assert(msg && msg.includes('Hello midwayjs!'))
@@ -37,6 +38,7 @@ describe(filename, () => {
   it('should GET /hello', async () => {
     const ret = await app.httpRequest()
       .get('/hello')
+      .set('authorization', `${schemePrefix} ${token1}    `)
       .expect(200)
 
     const msg: string = ret.text
@@ -46,6 +48,7 @@ describe(filename, () => {
   it('should GET /test_sign', async () => {
     const ret = await app.httpRequest()
       .get('/test_sign')
+      .set('authorization', `${schemePrefix} ${token1}    `)
       .expect(200)
 
     const msg: string = ret.text
@@ -66,7 +69,6 @@ describe(filename, () => {
   it('should works with invalid header auth', async () => {
     const ret = await app.httpRequest()
       .get('/token')
-      .set('authorization', `${schemePrefix} ${token1}    `)
       .expect(401)
 
     const msg: string = ret.text
