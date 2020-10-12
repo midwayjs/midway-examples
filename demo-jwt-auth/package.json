@@ -4,7 +4,7 @@
   "description": "midway boilerplate",
   "private": true,
   "dependencies": {
-    "@waiting/egg-jwt": "^2.0.0",
+    "@waiting/egg-jwt": "^3.0.0",
     "egg-scripts": "^2.11.0",
     "midway": "1"
   },
