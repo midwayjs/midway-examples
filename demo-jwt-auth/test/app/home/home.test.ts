@@ -51,7 +51,6 @@ describe(filename, () => {
         .set('authorization', `${schemePrefix} FAKE`)
         .expect(401)
 
-      console.log('ret>>>>', ret)
       const msg: string = ret.text
       assert(msg && msg.includes(JwtMsg.AuthFailed))
     })
