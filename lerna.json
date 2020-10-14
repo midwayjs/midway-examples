@@ -13,7 +13,7 @@
       ]
     },
     "run": {
-      "ignore": ["demo-sequelize", "demo-sequelize-typescript", "demo-nacos", "demo-plugin-egg-mysql"]
+      "ignore": ["demo-sequelize", "demo-sequelize-typescript", "demo-nacos", "demo-plugin-egg-mysql", "demo-plugin-egg-socket-io"]
     }
   },
   "version": "1.0.0"
