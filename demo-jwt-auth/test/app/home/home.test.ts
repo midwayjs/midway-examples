@@ -23,86 +23,112 @@ describe(filename, () => {
     // await ctx.service.xx();
   })
 
-  it('should GET /', async () => {
-    const ret = await app.httpRequest()
-      .get('/')
-      .expect(200)
 
-    const msg: string = ret.res.text
-    assert(msg && msg.includes('Hello midwayjs!'))
-  })
+  // src/config/config.default.ts
+  describe('Not in ignore config:', () => {
+    it('should error w/o token', async () => {
+      const ret = await app.httpRequest()
+        .get('/token')
+        .expect(401)
 
-  it('should GET /hello', async () => {
-    const ret = await app.httpRequest()
-      .get('/hello')
-      .expect(200)
-
-    const msg: string = ret.res.text
-    assert(msg && msg.includes('Hello midwayjs!'))
-  })
-
-  it('should GET /test_sign', async () => {
-    const ret = await app.httpRequest()
-      .get('/test_sign')
-      .expect(200)
-
-    const msg: string = ret.res.text
-    assert(msg && msg.includes('{"foo":"bar",'))
-    assert(msg.includes(header1))
-  })
-
-
-  it('should error w/o token', async () => {
-    const ret = await app.httpRequest()
-      .get('/token')
-      .expect(401)
-
-    const msg: string = ret.res.text
-    assert(msg && msg.includes(JwtMsg.AuthFailed))
-  })
-
-  it('should works with invalid header auth', async () => {
-    const ret = await app.httpRequest()
-      .get('/token')
-      .set('authorization', `${schemePrefix} ${token1}    `)
-      .expect(401)
-
-    const msg: string = ret.res.text
-    assert(msg && msg.includes(JwtMsg.AuthFailed))
-  })
-
-  it('should works with header auth', async () => {
-    const ret = await app.httpRequest()
-      .get('/token')
-      .set('authorization', `${schemePrefix} ${token1}`)
-      .expect(200)
-
-    const msg: string = ret.res.text
-    assert(msg && msg.includes(expectPayloadStr))
-  })
-
-  it('should works with cookies auth', async () => {
-    app.mockCookies({
-      access_token: token1,
+      const msg: string = ret.text
+      assert(msg && msg.includes(JwtMsg.AuthFailed))
     })
-    const ret = await app.httpRequest()
-      .get('/token')
-      .expect(200)
 
-    const msg: string = ret.res.text
-    assert(msg && msg.includes(expectPayloadStr))
+    it('should works with invalid header format', async () => {
+      const ret = await app.httpRequest()
+        .get('/token')
+        .set('authorization', `${schemePrefix} ${token1}FAKE`)
+        .expect(401)
+
+      const msg: string = ret.text
+      assert(msg && msg.includes(JwtMsg.AuthFailed))
+    })
+
+    it('should works with header format', async () => {
+      const ret = await app.httpRequest()
+        .get('/token')
+        .set('authorization', `${schemePrefix} FAKE`)
+        .expect(401)
+
+      const msg: string = ret.text
+      assert(msg && msg.includes(JwtMsg.AuthFailed))
+    })
+
+    it('should works with invalid header auth', async () => {
+      const ret = await app.httpRequest()
+        .get('/token')
+        .set('authorization', `${schemePrefix} ${token1.toLowerCase()}`)
+        .expect(401)
+
+      const msg: string = ret.text
+      assert(msg && msg.includes(JwtMsg.AuthFailed))
+    })
+
+    it('should works with header auth', async () => {
+      const ret = await app.httpRequest()
+        .get('/token')
+        .set('authorization', `${schemePrefix} ${token1}`)
+        .expect(200)
+
+      const msg: string = ret.text
+      assert(msg && msg.includes(expectPayloadStr))
+    })
+
+    it('should works with cookies auth', async () => {
+      app.mockCookies({
+        access_token: token1,
+      })
+      const ret = await app.httpRequest()
+        .get('/token')
+        .expect(200)
+
+      const msg: string = ret.text
+      assert(msg && msg.includes(expectPayloadStr))
+    })
+
+    it('should redirect w/o token', async () => {
+      // config at src/config/config.local.ts
+      const url = '/test_passthrough_redirect'
+      const ret = await app.httpRequest()
+        .get(url)
+        .expect(302)
+
+      const msg: string = ret.text
+      assert(msg && msg.includes('Redirecting'))
+      assert(msg.includes(`${url}_path`))
+    })
   })
 
+  // src/config/config.default.ts
+  describe('In ignore config:', () => {
+    it('should GET /', async () => {
+      const ret = await app.httpRequest()
+        .get('/')
+        .expect(200)
 
-  it('should redirect w/o token', async () => {
-    // config at src/config/config.local.ts
-    const url = '/test_passthrough_redirect'
-    const ret = await app.httpRequest()
-      .get(url)
-      .expect(302)
+      const msg: string = ret.text
+      assert(msg && msg.includes('Hello midwayjs!'))
+    })
 
-    const msg: string = ret.res.text
-    assert(msg && msg.includes('Redirecting'))
-    assert(msg.includes(`${url}_path`))
+    it('should GET /hello', async () => {
+      const ret = await app.httpRequest()
+        .get('/hello')
+        .expect(200)
+
+      const msg: string = ret.text
+      assert(msg && msg.includes('Hello midwayjs!'))
+    })
+
+    it('should GET /test_sign', async () => {
+      const ret = await app.httpRequest()
+        .get('/test_sign')
+        .expect(200)
+
+      const msg: string = ret.text
+      assert(msg && msg.includes('{"foo":"bar",'))
+      assert(msg.includes(header1))
+    })
   })
+
 })
