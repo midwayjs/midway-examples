@@ -27,7 +27,6 @@ jobs:
     - name: Install Dependencies
       run: npm i -g npminstall && npminstall
     - run: npm run bootstrap
-    - run: npm run lint
     - run: npm run build --if-present
     - run: npm run cov
     - name: Upload coverage to Codecov
