@@ -5,7 +5,8 @@
     "git-hooks": "^1.1.10",
     "lerna": "^3.16.4",
     "lerna-relinker": "^1.4.0",
-    "rimraf": "^3.0.0"
+    "rimraf": "^3.0.0",
+    "cnpm": "^6.1.1"
   },
   "scripts": {
     "autod": "lerna run autod",

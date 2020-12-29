@@ -1,6 +1,7 @@
 {
   "packages": [
-    "demo-*"
+    "v1/demo-*",
+    "v2/demo-*"
   ],
   "command": {
     "bootstrap": {
@@ -12,6 +13,11 @@
         "--no-package-lock"
       ]
     },
+    "build": {
+      "ignore": [
+        "demo-ant-design-pro"
+      ]
+    },
     "run": {
       "ignore": [
         "demo-sequelize", 
@@ -21,7 +27,13 @@
         "demo-plugin-egg-socket-io",
         "demo-demo-view-ejs-locals"
       ]
+    },
+    "cov": {
+      "ignore": [
+        "demo-ant-design-pro"
+      ]
     }
   },
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "npmClient": "cnpm"
 }
