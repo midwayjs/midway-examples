@@ -13,6 +13,11 @@
         "--no-package-lock"
       ]
     },
+    "build": {
+      "ignore": [
+        "demo-ant-design-pro"
+      ]
+    },
     "run": {
       "ignore": [
         "demo-sequelize", 
@@ -21,6 +26,11 @@
         "demo-plugin-egg-mysql", 
         "demo-plugin-egg-socket-io",
         "demo-demo-view-ejs-locals"
+      ]
+    },
+    "cov": {
+      "ignore": [
+        "demo-ant-design-pro"
       ]
     }
   },
