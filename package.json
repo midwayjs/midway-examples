@@ -2,6 +2,11 @@
   "name": "open-midway-examples",
   "version": "1.0.0",
   "devDependencies": {
+    "git-hooks": "^1.1.10",
+    "lerna": "^3.16.4",
+    "lerna-relinker": "^1.4.0",
+    "rimraf": "^3.0.0",
+    "cnpm": "^6.1.1"
   },
   "scripts": {
     "autod": "lerna run autod",
@@ -9,7 +14,7 @@
     "cov": "lerna run cov",
     "ci": "npm run build && npm run cov",
     "build": "lerna run build",
-    "bootstrap": "lerna bootstrap",
+    "bootstrap": "rm -f ./packages/.DS* && lerna bootstrap",
     "purge": "npm run clean && rm -rf node_modules",
     "clean": "lerna clean --yes && sh ./scripts/clean.sh"
   }

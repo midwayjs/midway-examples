@@ -5,9 +5,8 @@ V2: 对应midway 2.x版本的例子。
 
 # 使用说明
 ```
-cd v1 //进入v1仓库
-npm run bootstrap // 批量安装所有v1例子的node_modules，也可以单独进对应的例子进行npm install
-cd xxx && npm run dev // 运行例子
+npm run bootstrap // 批量安装所有例子的node_modules，也可以单独进对应的例子进行npm install
+cd v1/xxx && npm run dev // 运行例子
 ```
 
 # midway examples list
