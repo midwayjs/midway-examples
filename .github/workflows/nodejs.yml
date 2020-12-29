@@ -3,13 +3,7 @@
 
 name: Node.js CI
 
-on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
-  schedule:
-    - cron: '0 2 * * *'
+on: [push, pull_request]
 
 jobs:
   build:
@@ -32,11 +26,9 @@ jobs:
 
     - name: Install Dependencies
       run: npm i -g npminstall && npminstall
-
-    - name: Continuous Integration
-      run: npm run ci
-
-    - name: Code Coverage
+    - run: npm run bootstrap
+    - run: npm run lint
+    - run: npm run build --if-present
+    - run: npm run cov
+    - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v1
-      with:
-        token: ${{ secrets.CODECOV_TOKEN }}
