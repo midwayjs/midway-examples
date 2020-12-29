@@ -1,14 +1,22 @@
+# 说明
+本仓库是Midway应用的demo例子。
+V1: 对应midway 1.x版本的例子。
+V2: 对应midway 2.x版本的例子。
+
+# 使用说明
+```
+cd v1 //进入v1仓库
+npm run bootstrap // 批量安装所有v1例子的node_modules，也可以单独进对应的例子进行npm install
+```
+
 # midway examples list
-
 midway 示例列表。
-
 
 ##  示例提交规则
 
 - 使用 `midway-init` 命令，选择 `midway-demo` 这个类型创建脚手架，和现有目录不能重名，必须由 `demo-` 开头，如果是插件，可以用 `demo-plugin-` 打头
 - 补充 README 内容，描述清楚这个示例是做什么用的，以及使用的过程
 - 增加测试用例，方便回归
-
 
 ## demo 的包区别
 
