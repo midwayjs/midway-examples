@@ -1,0 +1,16 @@
+{
+  "name": "open-midway-examples",
+  "version": "1.0.0",
+  "devDependencies": {
+  },
+  "scripts": {
+    "autod": "lerna run autod",
+    "test": "lerna run test",
+    "cov": "lerna run cov",
+    "ci": "npm run build && npm run cov",
+    "build": "lerna run build",
+    "bootstrap": "lerna bootstrap",
+    "purge": "npm run clean && rm -rf node_modules",
+    "clean": "lerna clean --yes && sh ./scripts/clean.sh"
+  }
+}
