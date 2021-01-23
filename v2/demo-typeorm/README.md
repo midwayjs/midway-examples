@@ -11,7 +11,10 @@ open http://localhost:7001/
 ### Router
 
 - GET `/api/users`: Query All Users
-- GET `/api/create`: Create User
+- GET `/api/user:id` Query User By ID
+- POST `/api/create`: Create User
+- POST `/api/update`: Update User
+- POST `/api/delete`: Delete User
 
 ### Test
 

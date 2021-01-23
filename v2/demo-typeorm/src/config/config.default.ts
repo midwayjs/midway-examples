@@ -22,5 +22,9 @@ export default (appInfo: EggAppInfo) => {
     entities: ["../entities/*"],
   } as ConnectionOptions;
 
+  config.security = {
+    csrf: false,
+  };
+
   return config;
 };
