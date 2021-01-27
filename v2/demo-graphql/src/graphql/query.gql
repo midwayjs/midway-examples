@@ -1,0 +1,10 @@
+query {
+  GetAllUsers(pagination: { offset: 0, take: 100 }) {
+    id
+    name
+  }
+  GetUserById(id: 1) {
+    id
+    name
+  }
+}

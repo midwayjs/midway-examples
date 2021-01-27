@@ -17,5 +17,8 @@
     "bootstrap": "rm -f ./packages/.DS* && lerna bootstrap",
     "purge": "npm run clean && rm -rf node_modules",
     "clean": "lerna clean --yes && sh ./scripts/clean.sh"
+  },
+  "dependencies": {
+    "class-validator": "^0.13.1"
   }
 }
