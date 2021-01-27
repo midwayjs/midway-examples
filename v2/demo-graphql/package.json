@@ -11,7 +11,8 @@
     "egg": "^2.0.0",
     "egg-scripts": "^2.10.0",
     "graphql": "^15.4.0",
-    "type-graphql": "^1.1.1"
+    "type-graphql": "^1.1.1",
+    "class-validator": "^0.13.1"
   },
   "devDependencies": {
     "@midwayjs/cli": "^1.0.0",
