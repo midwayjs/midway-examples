@@ -16,3 +16,4 @@ coverage
 *.log
 typings
 *.sqlite
+/**/prisma/client
