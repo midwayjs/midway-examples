@@ -1,4 +1,4 @@
-# Midway-TypeORM-Example
+# Midway-Sequelize-Typescript-Example
 
 ## QuickStart
 
@@ -11,10 +11,6 @@ open http://localhost:7001/
 ### Router
 
 - GET `/api/users`: Query All Users
-- GET `/api/user:id` Query User By ID
-- POST `/api/create`: Create User
-- POST `/api/update`: Update User
-- POST `/api/delete`: Delete User
 
 ### Test
 
