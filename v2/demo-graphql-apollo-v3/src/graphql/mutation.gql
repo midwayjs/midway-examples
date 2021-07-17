@@ -1,0 +1,14 @@
+mutation {
+  CreateUser(createParams: { name: "fdsfsd" }) {
+    id
+    name
+  }
+  UpdateUser(updateParams: { id: 20, name: "dddd" }) {
+    id
+    name
+  }
+  DeleteUser(id: 15) {
+    id
+    name
+  }
+}

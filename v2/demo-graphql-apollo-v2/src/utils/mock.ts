@@ -1,7 +1,7 @@
 import User from '../graphql/user';
 
 export const getMockUser = () => {
-  let users: User[] = [];
+  const users: User[] = [];
 
   for (let i = 0; i < 20; i++) {
     users.push({
